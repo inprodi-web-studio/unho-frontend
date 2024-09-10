@@ -1,107 +1,305 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+@font-face {
+  font-family: 'Geist Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-300-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-300-normal.woff) format('woff');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
+@font-face {
+  font-family: 'Geist Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-400-normal.woff) format('woff');
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
+@font-face {
+  font-family: 'Geist Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-500-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-500-normal.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-600-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-600-normal.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-700-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-700-normal.woff) format('woff');
+}
+
+p {
   margin: 0;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+main {
+  background: transparent !important;
+}
+
+.ant-message {
+  display: none;
+}
+
+[data-sonner-toast] {
+  font-family: 'Geist Sans', sans-serif;
+}
+
+:where([data-sonner-toast]) :where([data-title]) {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+:where([data-sonner-toast]) :where([data-description]) {
+  font-size: 13px;
+  color: #868E96 !important;
+}
+
+li.ant-menu-item {
+  padding: 0px 12px !important;
+  margin: 4px 8px !important;
+  width: calc(100% - 16px) !important;
+  gap: 8px !important;
+  color: var(--plasmic-token-secondary-text) !important;
+  border: solid 1px transparent;
+  border-radius: 6px !important;
+  height: 36px !important;
+}
+
+li.ant-menu-item.ant-menu-item-selected {
+  background: white !important;
+  border: solid 1px var(--antd-colorBorder) !important;
+  color: black !important;
+  font-weight: 500 !important;
+}
+
+.ant-menu-item-group-title {
+  font-size: 12px !important;
+  color: #ADB5BD !important;
+  margin: 12px 0 0 0 !important;
+  padding: 0 16px !important;
+}
+
+.ant-menu-inline-collapsed .ant-menu-item-group-title {
+  visibility: hidden;
+}
+
+.ant-menu-inline-collapsed span.ant-menu-title-content {
+  display: none;
+}
+
+.ant-menu-inline-collapsed li.ant-menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-item:hover {
+  background: #F1F3F5 !important;
+}
+
+span.ant-input-borderless {
+  padding: 0 10px !important;
+}
+
+span.ant-input-borderless:hover,
+span.ant-input-borderless:focus-within {
+  background: rgba(0, 0, 0, 0.075);
+}
+
+.secondary_actions button {
+  color: var(--plasmic-token-secondary-text);
+}
+
+.secondary_actions button:hover {
+  color: var(--plasmic-token-secondary-text) !important;
+}
+
+.inprodi-skeleton {
+  flex: 1;
+  line-height: 1;
+}
+
+.ant-drawer-content {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  transition: all 1s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body:has(.opened-drawer) {
+  transition: none;
+  background-color: black;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.plasmic_page_wrapper>div {
+  transition-property: transform, border-radius;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+  transform-origin: left center;
+}
+
+.opened-drawer {
+  transform: scale(0.93) translate3d(20px, 0, 0);
+  overflow: hidden;
+  border-radius: 6px;
+  filter: blur(1.5px);
+}
+
+.ant-rate-star-zero .ant-rate-star-second {
+  color: rgba(0, 0, 0, 0.20) !important;
+}
+
+span.ant-segmented-item-icon {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+}
+
+.ant-segmented-item-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.ant-segmented-item-label span {
+  margin-inline-start: 0px !important;
+}
+
+span.ant-divider-inner-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #868E96 !important;
+}
+
+.ant-input-affix-wrapper {
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 1px 3px 0px, rgba(0, 0, 0, 0.02) 0px 1px 2px 0px;
+}
+
+.ant-input:not(.ant-input-affix-wrapper > .ant-input) {
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 1px 3px 0px, rgba(0, 0, 0, 0.02) 0px 1px 2px 0px;
+}
+
+.ant-drawer-header {
+  padding: 8px 16px 8px 10px !important;
+}
+
+.ant-drawer-title,
+.ant-modal-title {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+}
+
+.confirmation-content {
+  padding: 20px;
+}
+
+.ant-modal-content {
+  padding: 0 !important;
+}
+
+.ant-modal-header {
+  padding: 8px 16px !important;
+  border-bottom: solid 1px var(--antd-colorBorder) !important;
+  margin: 0 !important;
+}
+
+button.ant-modal-close {
+  top: 6px !important;
+}
+
+.ant-modal-footer {
+  margin: 0 !important;
+  padding: 10px 16px !important;
+  border-top: solid 1px var(--antd-colorBorder) !important;
+}
+
+.ant-pagination-prev,
+.ant-pagination-next {
+  display: none !important;
+}
+
+ul.ant-pagination.ant-pagination-mini {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+li.ant-pagination-item a {
+  color: var(--plasmic-token-secondary-text) !important;
+}
+
+li.ant-pagination-item.ant-pagination-item-active a {
+  color: black !important;
+}
+
+.ant-input-number-input-wrap,
+.ant-input-number-input {
+  height: 100%;
+}
+
+.filepond--root.image-uploader {
+  margin: 0 !important;
+  font-family: Geist sans;
+  cursor: pointer;
+}
+
+.image-uploader .filepond--panel-root {
+  background: var(--antd-colorBgLayout);
+  border-radius: 6px;
+  border: dashed 1px var(--antd-colorBorder);
+}
+
+.image-uploader .filepond--drop-label label {
+  cursor: pointer !important;
+  font-size: 12px;
+  color: var(--plasmic-token-secondary-text);
+}
+
+.fc-header-toolbar.fc-toolbar {
+  padding: 10px 20px;
+  margin: 0 !important;
+}
+
+.fc .fc-button-primary {
+  background-color: var(--antd-colorPrimary);
+  border-color: var(--antd-colorPrimary);
+}
+
+.fc .fc-button-primary:hover {
+  background-color: var(--antd-colorPrimaryBgHover);
+  border-color: var(--antd-colorPrimaryBgHover);
+}
+
+.fc .fc-button-primary.fc-button-active {
+  background-color: var(--antd-colorPrimaryActive);
+  border-color: var(--antd-colorPrimaryActive);
+}
+
+a.fc-col-header-cell-cushion {
+  color: var(--token-DChfzOS4leXU);
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.fc-daygrid-day-number {
+  color: var(--antd-colorText);
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+  background-color: rgb(146 156 155 / 20%);
 }

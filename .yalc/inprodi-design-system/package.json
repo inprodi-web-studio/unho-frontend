@@ -1,0 +1,80 @@
+{
+  "version": "1.6.16",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {
+    "antd": "^5.17.4",
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "inprodi-design-system",
+  "author": "inprodi-web-studio",
+  "module": "dist/inprodi-design-system.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/inprodi-design-system.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/inprodi-design-system.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "dependencies": {
+    "@hookform/resolvers": "^3.4.2",
+    "@phosphor-icons/react": "^2.1.5",
+    "@plasmicapp/loader-nextjs": "^1.0.390",
+    "@plasmicapp/loader-react": "^1.0.354",
+    "@tiptap/extension-placeholder": "^2.5.9",
+    "@tiptap/extension-text-align": "^2.5.9",
+    "@tiptap/extension-underline": "^2.5.9",
+    "@tiptap/pm": "^2.5.8",
+    "@tiptap/react": "^2.5.8",
+    "@tiptap/starter-kit": "^2.5.8",
+    "@types/lodash.debounce": "^4.0.9",
+    "@types/react-input-mask": "^3.0.5",
+    "axios": "^1.7.2",
+    "filepond": "^4.31.1",
+    "filepond-plugin-file-validate-type": "^1.2.9",
+    "filepond-plugin-image-preview": "^4.6.12",
+    "lodash.debounce": "^4.0.8",
+    "react-countup": "^6.5.3",
+    "react-easy-crop": "^5.0.7",
+    "react-filepond": "^7.1.2",
+    "react-gauge-component": "^1.2.21",
+    "react-hook-form": "^7.51.5",
+    "react-input-mask": "^2.0.4",
+    "react-loading-skeleton": "^3.4.0",
+    "react-resizable-panels": "^2.0.19",
+    "react-type-animation": "^3.2.0",
+    "vaul": "^0.9.1",
+    "zod": "^3.23.8"
+  },
+  "yalcSig": "f107e90e042f0653a51fee1e7e9e34f5"
+}
