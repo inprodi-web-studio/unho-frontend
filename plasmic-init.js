@@ -16,6 +16,9 @@ import formatCurrency from "./helpers/formatCurrency";
 import { registerLimitedDatePicker } from "./components/LimitedDatePicker";
 import { registerPartnerOrder } from "./components/PartnerOrder";
 import { registerAssignationCalendar } from "./components/AssignationCalendar";
+import getConstants from "./helpers/getConstants";
+import validateEmail from "./helpers/vaidateEmail";
+import validatePhone from "./helpers/validatePhone";
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
@@ -33,6 +36,33 @@ registerCalendar( PLASMIC );
 registerAssignationCalendar(PLASMIC);
 registerLimitedDatePicker( PLASMIC );
 registerPartnerOrder( PLASMIC );
+
+PLASMIC.registerFunction( getConstants, {
+  name : "getConstants",
+  params : [],
+});
+
+PLASMIC.registerFunction( validateEmail, {
+  name : "validateEmail",
+  params : [
+    {
+      name        : "email",
+      type        : "string",
+      description : "The email to validate",
+    },
+  ],
+});
+
+PLASMIC.registerFunction( validatePhone, {
+  name : "validatePhone",
+  params : [
+    {
+      name        : "phone",
+      type        : "string",
+      description : "The phone to validate",
+    },
+  ],
+});
 
 PLASMIC.registerFunction( showNotification, {
   name : "showNotification",
