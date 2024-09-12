@@ -31,6 +31,7 @@ export const Modal = ({
         centered
         closable
         destroyOnClose
+        getContainer={false}
         open={open}
         footer={ showFooter ? undefined : null }
         closeIcon={ showCloseButton ? <Icon icon="X" variant="regular" /> : false }

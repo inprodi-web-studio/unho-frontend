@@ -3047,6 +3047,7 @@ var Modal = function Modal(_ref) {
     centered: true,
     closable: true,
     destroyOnClose: true,
+    getContainer: false,
     open: open,
     footer: showFooter ? undefined : null,
     closeIcon: showCloseButton ? React__default.createElement(Icon, {
