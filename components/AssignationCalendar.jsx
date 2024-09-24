@@ -33,12 +33,12 @@ export const AssignationCalendar = forwardRef(({ events, minDate, maxDate, onEve
         headerToolbar={{
           left: "prev,next",
           center: "title",
-          right: "multiMonthYear,dayGridMonth,timeGridWeek"
+          right: "dayGridMonth,timeGridWeek"
         }}
         eventContent={(arg) => {
           const { event, view: { type }, isPast } = arg;
           const { status, partner } = event.extendedProps;
-          const { image, label } = partner;
+          const { image, name, faherSurname, motherSurname } = partner;
 
           return (
             <div style={{
@@ -62,7 +62,7 @@ export const AssignationCalendar = forwardRef(({ events, minDate, maxDate, onEve
                 fontWeight: "500",
                 color: isPast ? "#bfbfbf" : "white",
               }}>
-                {label}
+                {name} {faherSurname} {motherSurname}
               </span>
             </div>
           );
