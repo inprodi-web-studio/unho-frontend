@@ -24,7 +24,7 @@
     "@types/react-input-mask": "^3.0.5",
     "antd": "^5.17.4",
     "dayjs": "^1.11.11",
-    "inprodi-design-system": "file:.yalc/inprodi-design-system",
+    "inprodi-design-system": "1.8.0",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "lodash.debounce": "^4.0.8",

@@ -45,7 +45,7 @@ export const AssignationCalendar = forwardRef(({ events, minDate, maxDate, onEve
         headerToolbar={{
           left: "prev,next",
           center: "title",
-          right: "multiMonthYear,dayGridMonth,timeGridWeek"
+          right: "dayGridMonth,timeGridWeek"
         }}
         eventContent={(arg) => {
           const { event, view: { type }, isPast } = arg;
