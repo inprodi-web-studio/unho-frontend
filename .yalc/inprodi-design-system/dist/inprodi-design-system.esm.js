@@ -18,6 +18,7 @@ import { WarningDiamond, CaretRight, CaretLeft } from '@phosphor-icons/react';
 import { registerPlugin, FilePond } from 'react-filepond';
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+import { ResponsiveLine as ResponsiveLine$1 } from '@nivo/line';
 import CountUp from 'react-countup';
 import { TypeAnimation } from 'react-type-animation';
 import { useEditor, EditorContent } from '@tiptap/react';
@@ -547,7 +548,8 @@ function registerButton(loader, customButtonMeta) {
 }
 
 var Icon = function Icon(_ref) {
-  var icon = _ref.icon,
+  var _ref$icon = _ref.icon,
+    icon = _ref$icon === void 0 ? "CircleDashed" : _ref$icon,
     size = _ref.size,
     color = _ref.color,
     variant = _ref.variant;
@@ -3579,10 +3581,173 @@ function registerRate(loader, customRateMeta) {
   doRegisterComponent(Rate, customRateMeta != null ? customRateMeta : rateMeta);
 }
 
-var _excluded$d = ["content"];
+var _excluded$d = ["data"];
+var ResponsiveLine = function ResponsiveLine(_ref) {
+  var data = _ref.data,
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$d);
+  return React.createElement(ResponsiveLine$1, Object.assign({
+    data: data,
+    colors: function colors(data) {
+      return data.color;
+    }
+  }, props));
+};
+var responsiveLineMeta = {
+  name: "ResponsiveLine",
+  displayName: "Responsive Line",
+  props: {
+    data: {
+      type: "array",
+      defaultValue: [{
+        id: "test",
+        color: "#000000",
+        data: [{
+          x: "2023-01-01",
+          y: 1000
+        }, {
+          x: "2023-02-01",
+          y: 1500
+        }, {
+          x: "2023-05-01",
+          y: 1200
+        }, {
+          x: "2023-10-01",
+          y: 1760
+        }]
+      }]
+    },
+    xScale: {
+      type: "object",
+      defaultValue: {}
+    },
+    yScale: {
+      type: "object",
+      defaultValue: {}
+    },
+    margin: {
+      type: "object",
+      defaultValue: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0
+      }
+    },
+    curve: {
+      type: "choice",
+      options: ["basis", "cardinal", "catmullRom", "linear", "monotoneX", "monotoneY", "natural", "step", "stepAfter", "stepBefore"],
+      defaultValue: "linear"
+    },
+    lineWidth: {
+      type: "number",
+      defaultValue: 3
+    },
+    enableArea: {
+      type: "boolean",
+      defaultValue: false
+    },
+    areaOpacity: {
+      type: "number",
+      defaultValue: 0.5,
+      hidden: function hidden(props) {
+        return !props.enableArea;
+      }
+    },
+    enablePoints: {
+      type: "boolean",
+      defaultValue: true
+    },
+    defs: {
+      type: "array",
+      defaultValue: []
+    },
+    fill: {
+      type: "array",
+      defaultValue: []
+    },
+    pointSize: {
+      type: "number",
+      defaultValue: 10,
+      hidden: function hidden(props) {
+        return !props.enablePoints;
+      }
+    },
+    pointBorderWidth: {
+      type: "number",
+      defaultValue: 2,
+      hidden: function hidden(props) {
+        return !props.enablePoints;
+      }
+    },
+    enablePointLabel: {
+      type: "boolean",
+      defaultValue: true,
+      hidden: function hidden(props) {
+        return !props.enablePoints;
+      }
+    },
+    pointLabelYOffset: {
+      type: "number",
+      defaultValue: 0,
+      hidden: function hidden(props) {
+        return !props.enablePointLabel;
+      }
+    },
+    enableGridX: {
+      type: "boolean",
+      defaultValue: true
+    },
+    enableGridY: {
+      type: "boolean",
+      defaultValue: true
+    },
+    axisBottom: {
+      type: "object",
+      defaultValue: {}
+    },
+    axisLeft: {
+      type: "object",
+      defaultValue: {}
+    },
+    isInteractive: {
+      type: "boolean",
+      defaultValue: true
+    },
+    useMesh: {
+      type: "boolean",
+      defaultValue: true
+    },
+    enableCrosshair: {
+      type: "boolean",
+      defaultValue: true
+    },
+    crosshairType: {
+      type: "choice",
+      options: ["x", "y", "top-left", "top", "top-right", "right", "bottom-left", "bottom-right", "bottom", "left", "cross"],
+      defaultValue: "cell",
+      hidden: function hidden(props) {
+        return !props.enableCrosshair;
+      }
+    },
+    animate: {
+      type: "boolean",
+      defaultValue: true
+    }
+  },
+  importPath: "inprodi-design-system",
+  importName: "ResponsiveLine"
+};
+function registerResponsiveLine(loader, customResponsiveLineMeta) {
+  var doRegisterComponent = function doRegisterComponent() {
+    return loader ? loader.registerComponent.apply(loader, arguments) : registerComponent.apply(void 0, arguments);
+  };
+  doRegisterComponent(ResponsiveLine, customResponsiveLineMeta != null ? customResponsiveLineMeta : responsiveLineMeta);
+}
+
+var _excluded$e = ["content"];
 var Ribbon = function Ribbon(_ref) {
   var content = _ref.content,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded$d);
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$e);
   return React.createElement(Badge.Ribbon, Object.assign({}, props), content);
 };
 var ribbonMeta = {
@@ -3615,11 +3780,11 @@ function registerRibbon(loader, customRibbonMeta) {
   doRegisterComponent(Ribbon, customRibbonMeta != null ? customRibbonMeta : ribbonMeta);
 }
 
-var _excluded$e = ["options", "onChange"];
+var _excluded$f = ["options", "onChange"];
 var Segmented = function Segmented(_ref) {
   var options = _ref.options,
     _onChange = _ref.onChange,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded$e);
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$f);
   var parsedOptions = [];
   for (var _iterator = _createForOfIteratorHelperLoose(options), _step; !(_step = _iterator()).done;) {
     var option = _step.value;
@@ -3998,11 +4163,11 @@ function registerSlider(loader, customSliderMeta) {
   doRegisterComponent(Slider, customSliderMeta != null ? customSliderMeta : sliderMeta);
 }
 
-var _excluded$f = ["label", "closable"];
+var _excluded$g = ["label", "closable"];
 var Tag = function Tag(_ref) {
   var label = _ref.label,
     closable = _ref.closable,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded$f);
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$g);
   return React.createElement(Tag$1, Object.assign({
     closeIcon: closable,
     style: {
@@ -4295,11 +4460,11 @@ function registerStat(loader, customRegisterMeta) {
   doRegisterComponent(Stat, customRegisterMeta != null ? customRegisterMeta : statMeta);
 }
 
-var _excluded$g = ["checkedIcon", "unCheckedIcon"];
+var _excluded$h = ["checkedIcon", "unCheckedIcon"];
 var Switch = function Switch(_ref) {
   var checkedIcon = _ref.checkedIcon,
     unCheckedIcon = _ref.unCheckedIcon,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded$g);
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$h);
   return React.createElement(Switch$1, Object.assign({
     onClick: function onClick(checked, event) {
       if (checked) {
@@ -4695,7 +4860,7 @@ function registerTextEditor(loader, customTextEditorMeta) {
   doRegisterComponent(TextEditor, customTextEditorMeta != null ? customTextEditorMeta : textEditorMeta);
 }
 
-var _excluded$h = ["size", "value", "error", "format", "onChange"];
+var _excluded$i = ["size", "value", "error", "format", "onChange"];
 dayjs.extend(customParseFormat);
 dayjs.extend(advancedFormat);
 dayjs.extend(weekday);
@@ -4709,7 +4874,7 @@ var TimePicker = function TimePicker(_ref) {
     error = _ref.error,
     format = _ref.format,
     _onChange = _ref.onChange,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded$h);
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$i);
   return React.createElement(TimePicker$1, Object.assign({}, props, {
     style: {
       height: size === "small" ? "30px" : size === "middle" ? "38px" : "46px"
@@ -4832,6 +4997,7 @@ function registerAll(loader) {
   registerAdvancedTable(loader);
   registerImageUploader(loader);
   registerTextAnimation(loader);
+  registerResponsiveLine(loader);
   registerDateRangePicker(loader);
   registerAdvancedTableCell(loader);
   registerAdvancedTableColumn(loader);

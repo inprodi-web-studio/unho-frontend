@@ -13,9 +13,21 @@ export const AssignationCalendar = forwardRef(({ events, minDate, maxDate, onEve
     useImperativeHandle(ref, () => ({
         addEvent: (event) => {
             if (calendarRef.current) {
-                calendarRef.current.getApi().addEvent(event);
+              calendarRef.current.getApi().addEvent(event);
             }
         },
+        getEvents : () => {
+            if (calendarRef.current) {
+              console.log(calendarRef.current.getApi().getEvents());
+              return calendarRef.current.getApi().getEvents();
+            }
+            return [];
+        },
+        removeEvent : (event) => {
+            if (calendarRef.current) {
+              calendarRef.current.getApi().getEventById(event.id).remove();
+            }
+        }
     }));
 
     return (
@@ -24,11 +36,11 @@ export const AssignationCalendar = forwardRef(({ events, minDate, maxDate, onEve
         handleWindowResize
         validRange={{ start: minDate, end: maxDate }}
         eventClick={({ event }) => {
-          const { startStr, endStr, extendedProps } = event;
-          onEventClick && onEventClick({ startStr, endStr, extendedProps });
+          const { startStr, endStr, extendedProps, id } = event;
+          onEventClick && onEventClick({ startStr, endStr, extendedProps, id });
         }}
         height="100%"
-        events={events}
+        initialEvents={events}
         locale={esLocale}
         headerToolbar={{
           left: "prev,next",
@@ -38,7 +50,7 @@ export const AssignationCalendar = forwardRef(({ events, minDate, maxDate, onEve
         eventContent={(arg) => {
           const { event, view: { type }, isPast } = arg;
           const { status, partner } = event.extendedProps;
-          const { image, label } = partner;
+          const { image, name, fatherSurname, motherSurname } = partner;
 
           return (
             <div style={{
@@ -62,7 +74,7 @@ export const AssignationCalendar = forwardRef(({ events, minDate, maxDate, onEve
                 fontWeight: "500",
                 color: isPast ? "#bfbfbf" : "white",
               }}>
-                {label}
+                {name} {fatherSurname} {motherSurname}
               </span>
             </div>
           );
@@ -112,6 +124,12 @@ export const assignationCalendarMeta = {
         addEvent : {
             argTypes : [{ name: "event", type: "object" }],
         },
+        getEvents : {
+            argTypes : [],
+        },
+        removeEvent : {
+            argTypes : [{ name: "event", type: "object" }],
+        }
     },
     importPath: "/components/AssignationCalendar.jsx",
     importName: "AssignationCalendar",

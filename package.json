@@ -17,6 +17,7 @@
     "@fullcalendar/react": "^6.1.15",
     "@fullcalendar/timegrid": "^6.1.15",
     "@hookform/resolvers": "^3.4.2",
+    "@nivo/line": "0.80.0",
     "@phosphor-icons/react": "^2.1.5",
     "@plasmicapp/loader-nextjs": "^1.0.389",
     "@types/lodash.debounce": "^4.0.9",

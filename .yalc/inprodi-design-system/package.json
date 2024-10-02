@@ -1,5 +1,5 @@
 {
-  "version": "1.6.17",
+  "version": "1.7.10",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -48,6 +48,8 @@
   ],
   "dependencies": {
     "@hookform/resolvers": "^3.4.2",
+    "@nivo/core": "0.80.0",
+    "@nivo/line": "0.80.0",
     "@phosphor-icons/react": "^2.1.5",
     "@plasmicapp/loader-nextjs": "^1.0.390",
     "@plasmicapp/loader-react": "^1.0.354",
@@ -76,5 +78,5 @@
     "vaul": "^0.9.1",
     "zod": "^3.23.8"
   },
-  "yalcSig": "ddbdda2d28682a439e1f9663f8bb4fd0"
+  "yalcSig": "ccd9664a2bd65d3eff1e8d007e5cdf2f"
 }

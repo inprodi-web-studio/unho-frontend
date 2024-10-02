@@ -14,7 +14,7 @@ export interface iconProps {
 };
 
 export const Icon = ({
-    icon,
+    icon = "CircleDashed",
     size,
     color,
     variant,

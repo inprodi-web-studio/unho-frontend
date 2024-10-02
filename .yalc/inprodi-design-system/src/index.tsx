@@ -24,6 +24,7 @@ import { registerNumberInput } from "./registerNumberInput";
 import { registerPasswordInput } from "./registerPasswordInput";
 import { registerProgress } from "./registerProgress";
 import { registerRate } from "./registerRate";
+import { registerResponsiveLine } from "./registerResponsiveLine";
 import { registerRibbon } from "./registerRibbon";
 import { registerSegmented } from "./registerSegmented";
 import { registerSelect } from "./registerSelect";
@@ -70,6 +71,7 @@ export function registerAll(loader?: Registerable) {
   registerAdvancedTable(loader);
   registerImageUploader(loader);
   registerTextAnimation(loader);
+  registerResponsiveLine(loader);
   registerDateRangePicker(loader);
   registerAdvancedTableCell(loader);
   registerAdvancedTableColumn(loader);
