@@ -1,6 +1,6 @@
 const getConstants = () => {
     return {
-        API_URL : "https://mayfly-intimate-polliwog.ngrok-free.app/api"
+        API_URL : "https://unho-api-w2pwh.ondigitalocean.app/api"
     };
 };
 
