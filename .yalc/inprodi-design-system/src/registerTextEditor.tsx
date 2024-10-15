@@ -42,11 +42,11 @@ export const TextEditor = ({
         },
     });
 
-    useEffect( () => {
-        if (value) {
-            editor?.commands?.setContent( value, false, { preserveWhitespace : "full" });
+    useEffect(() => {
+        if (value && editor && value !== editor.getHTML()) {
+          editor.commands.setContent(value, false, { preserveWhitespace: 'full' });
         }
-    }, [value, editor]);
+      }, [value, editor]);
 
     useEffect(() => {
         editor?.setEditable(!disabled);

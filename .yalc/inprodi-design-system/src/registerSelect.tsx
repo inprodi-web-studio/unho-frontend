@@ -99,6 +99,9 @@ export const Select = forwardRef<any, SelectProps>(({
         width : "100%",
         fontSize : "14px",
         fontWeight : "400",
+        whiteSpace : "nowrap",
+        textOverflow : "ellipsis",
+        overflow : "hidden",
         color : (internalValue?.label && !disabled) ? token.colorText : token.colorTextDisabled,
     };
 

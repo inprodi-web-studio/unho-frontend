@@ -97,7 +97,7 @@ export const Layout = ({
                 };
             }
         });
-    };    
+    }; 
 
     return (
         <AntdLayout hasSider style={{ minHeight : "100vh" }}>

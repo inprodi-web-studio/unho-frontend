@@ -1,5 +1,5 @@
 {
-  "version": "1.7.10",
+  "version": "1.8.11",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -19,7 +19,7 @@
     "analyze": "size-limit --why"
   },
   "peerDependencies": {
-    "antd": "^5.17.4",
+    "antd": "^5.21.0",
     "react": ">=16"
   },
   "husky": {
@@ -55,6 +55,7 @@
     "@plasmicapp/loader-react": "^1.0.354",
     "@tiptap/extension-placeholder": "^2.5.9",
     "@tiptap/extension-text-align": "^2.5.9",
+    "@tiptap/extension-text-style": "^2.8.0",
     "@tiptap/extension-underline": "^2.5.9",
     "@tiptap/pm": "^2.5.8",
     "@tiptap/react": "^2.5.8",
@@ -78,5 +79,5 @@
     "vaul": "^0.9.1",
     "zod": "^3.23.8"
   },
-  "yalcSig": "ccd9664a2bd65d3eff1e8d007e5cdf2f"
+  "yalcSig": "a64763223f25e1433512c90d26c54f18"
 }

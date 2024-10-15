@@ -34,6 +34,7 @@ interface DatePickerProps extends AntdDatePickerProps {
 export const DatePicker = ({
     size,
     error,
+    showTime,
     value,
     minDate,
     maxDate,
@@ -48,7 +49,7 @@ export const DatePicker = ({
                 height: size === "small" ? "30px" : size === "middle" ? "38px" : "46px",
             }}
             showNow={false}
-            format="MMMM D, YYYY"
+            format={ showTime ? "YYYY-MM-DD HH:mm" : "YYYY-MM-DD" }
             minDate={ minDate ? dayjs( minDate ) : undefined }
             maxDate={ maxDate ? dayjs( maxDate ) : undefined }
             value={ value ? dayjs( value ) : undefined }

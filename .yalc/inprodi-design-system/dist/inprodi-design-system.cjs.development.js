@@ -1656,7 +1656,7 @@ function registerConfirmation(loader, customConfirmationMeta) {
   doRegisterComponent(Confirmation, customConfirmationMeta != null ? customConfirmationMeta : confirmationMeta);
 }
 
-var _excluded$4 = ["size", "error", "value", "minDate", "maxDate", "onChange"];
+var _excluded$4 = ["size", "error", "showTime", "value", "minDate", "maxDate", "onChange"];
 dayjs.extend(customParseFormat);
 dayjs.extend(advancedFormat);
 dayjs.extend(weekday);
@@ -1667,6 +1667,7 @@ dayjs.locale("es-mx");
 var DatePicker = function DatePicker(_ref) {
   var size = _ref.size,
     error = _ref.error,
+    showTime = _ref.showTime,
     value = _ref.value,
     minDate = _ref.minDate,
     maxDate = _ref.maxDate,
@@ -1677,7 +1678,7 @@ var DatePicker = function DatePicker(_ref) {
       height: size === "small" ? "30px" : size === "middle" ? "38px" : "46px"
     },
     showNow: false,
-    format: "MMMM D, YYYY",
+    format: showTime ? "YYYY-MM-DD HH:mm" : "YYYY-MM-DD",
     minDate: minDate ? dayjs(minDate) : undefined,
     maxDate: maxDate ? dayjs(maxDate) : undefined,
     value: value ? dayjs(value) : undefined,
@@ -3631,6 +3632,12 @@ var responsiveLineMeta = {
       type: "object",
       defaultValue: {}
     },
+    xFormat: {
+      type: "string"
+    },
+    yFormat: {
+      type: "string"
+    },
     margin: {
       type: "object",
       defaultValue: {
@@ -3699,6 +3706,11 @@ var responsiveLineMeta = {
       hidden: function hidden(props) {
         return !props.enablePointLabel;
       }
+    },
+    enableSlices: {
+      type: "choice",
+      defaultValue: "x",
+      options: ["x", "y", "false"]
     },
     enableGridX: {
       type: "boolean",
@@ -3948,6 +3960,9 @@ var Select = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     width: "100%",
     fontSize: "14px",
     fontWeight: "400",
+    whiteSpace: "nowrap",
+    textOverflow: "ellipsis",
+    overflow: "hidden",
     color: internalValue != null && internalValue.label && !disabled ? token.colorText : token.colorTextDisabled
   };
   return React__default.createElement(Dropdown, {
@@ -4613,10 +4628,9 @@ var TextEditor = function TextEditor(_ref) {
     }
   });
   React.useEffect(function () {
-    if (value) {
-      var _editor$commands;
-      editor == null || (_editor$commands = editor.commands) == null || _editor$commands.setContent(value, false, {
-        preserveWhitespace: "full"
+    if (value && editor && value !== editor.getHTML()) {
+      editor.commands.setContent(value, false, {
+        preserveWhitespace: 'full'
       });
     }
   }, [value, editor]);

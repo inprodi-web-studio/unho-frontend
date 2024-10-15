@@ -48,6 +48,12 @@ export const responsiveLineMeta: CodeComponentMeta<any> = {
             type : "object",
             defaultValue : {},
         },
+        xFormat : {
+            type : "string",
+        },
+        yFormat : {
+            type : "string",
+        },
         margin : {
             type : "object",
             defaultValue : {
@@ -106,6 +112,11 @@ export const responsiveLineMeta: CodeComponentMeta<any> = {
             type : "number",
             defaultValue : 0,
             hidden : (props) => !props.enablePointLabel,
+        },
+        enableSlices : {
+            type : "choice",
+            defaultValue : "x",
+            options : ["x", "y", "false"],
         },
         enableGridX : {
             type : "boolean",

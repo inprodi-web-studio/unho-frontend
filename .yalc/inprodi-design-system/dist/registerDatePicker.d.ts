@@ -8,7 +8,7 @@ interface DatePickerProps extends AntdDatePickerProps {
     value: any;
     onChange: any;
 }
-export declare const DatePicker: ({ size, error, value, minDate, maxDate, onChange, ...props }: DatePickerProps) => React.JSX.Element;
+export declare const DatePicker: ({ size, error, showTime, value, minDate, maxDate, onChange, ...props }: DatePickerProps) => React.JSX.Element;
 export declare const datePickerMeta: CodeComponentMeta<DatePickerProps>;
 export declare function registerDatePicker(loader?: Registerable, customDatePickerMeta?: CodeComponentMeta<DatePickerProps>): void;
 export {};
