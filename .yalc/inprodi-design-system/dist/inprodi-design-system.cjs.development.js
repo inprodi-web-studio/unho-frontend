@@ -1678,6 +1678,7 @@ var DatePicker = function DatePicker(_ref) {
       height: size === "small" ? "30px" : size === "middle" ? "38px" : "46px"
     },
     showNow: false,
+    showTime: showTime,
     format: showTime ? "YYYY-MM-DD HH:mm" : "YYYY-MM-DD",
     minDate: minDate ? dayjs(minDate) : undefined,
     maxDate: maxDate ? dayjs(maxDate) : undefined,
