@@ -3198,10 +3198,10 @@ ini@~1.3.0:
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.8.tgz#a29da425b48806f34767a4efce397269af28432c"
   integrity sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==
 
-inprodi-design-system@1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/inprodi-design-system/-/inprodi-design-system-1.8.0.tgz#279431a11c37c79fbb4e47e5bbf2c6073f71ffae"
-  integrity sha512-pDZ2ijZBXq6GZ6JAg3uVc5tEIej1rYhpFTvXdMEt/JR/ojvKrztxsPD14V9JroQfliiPB0B4GCoci4r0490tyg==
+inprodi-design-system@1.8.14:
+  version "1.8.14"
+  resolved "https://registry.yarnpkg.com/inprodi-design-system/-/inprodi-design-system-1.8.14.tgz#df6cb6b56f1d86ea12b8e4850bade017f2933bc9"
+  integrity sha512-16eKVT0My5aAQcr0+3GIswJyglmsYAmMma1gENb6dZEb8FyJ57N1Ts266vd55CXpThCKNUpniBl3g0T0Qr9i7w==
   dependencies:
     "@hookform/resolvers" "^3.4.2"
     "@nivo/core" "0.80.0"
@@ -3211,6 +3211,7 @@ inprodi-design-system@1.8.0:
     "@plasmicapp/loader-react" "^1.0.354"
     "@tiptap/extension-placeholder" "^2.5.9"
     "@tiptap/extension-text-align" "^2.5.9"
+    "@tiptap/extension-text-style" "^2.8.0"
     "@tiptap/extension-underline" "^2.5.9"
     "@tiptap/pm" "^2.5.8"
     "@tiptap/react" "^2.5.8"

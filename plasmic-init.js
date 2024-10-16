@@ -19,6 +19,7 @@ import { registerAssignationCalendar } from "./components/AssignationCalendar";
 import getConstants from "./helpers/getConstants";
 import validateEmail from "./helpers/vaidateEmail";
 import validatePhone from "./helpers/validatePhone";
+import createDayJsObject from "./helpers/createDayJsObject";
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
@@ -125,6 +126,17 @@ PLASMIC.registerFunction( formatDate, {
       name        : "format",
       type        : "string",
       description : "The format to use",
+    },
+  ],
+});
+
+PLASMIC.registerFunction( createDayJsObject, {
+  name : "createDayJsObject",
+  params : [
+    {
+      name        : "date",
+      type        : "string",
+      description : "The date to create the dayjs object",
     },
   ],
 });
