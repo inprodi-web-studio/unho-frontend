@@ -41,10 +41,16 @@ export const LimitedDatePicker = ({
     size,
     maxDate,
     onChange,
+    allowedDates,
     ...props
 }) => {
 
     const disabledDayNumber = daysMap[activeWeekDay] ? daysMap[activeWeekDay] : undefined;
+
+    const disabledDate = (current) => {
+        if (!allowedDates) return false;
+        return !allowedDates.some(date => dayjs(date).isSame(current, 'day'));
+    };
 
     return (
         <AntdDatePicker
@@ -53,7 +59,7 @@ export const LimitedDatePicker = ({
             format="MMMM D, YYYY"
             minDate={ minDate ? dayjs( minDate ) : undefined }
             disabledDate={ (current) => {
-                return current && disabledDayNumber !== current.day();
+                return current && disabledDayNumber !== current.day() || disabledDate(current);
             }}
             style={{
                 height: size === "small" ? "30px" : size === "middle" ? "38px" : "46px",
@@ -129,6 +135,11 @@ export const datePickerMeta = {
         onChange : {
             type: "eventHandler",
             argTypes : [],
+        },
+        allowedDates: {
+            type: "array",
+            defaultValue: [],
+            description: "Array of dates to be enabled in the date picker",
         },
     },
     importPath: "inprodi-design-system",
