@@ -20,7 +20,7 @@ import getConstants from "./helpers/getConstants";
 import validateEmail from "./helpers/vaidateEmail";
 import validatePhone from "./helpers/validatePhone";
 import createDayJsObject from "./helpers/createDayJsObject";
-import base64ToBlob from "./helpers/base64ToBlob";
+import createBufferFile from "./helpers/createBufferFile";
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
@@ -44,8 +44,8 @@ PLASMIC.registerFunction( getConstants, {
   params : [],
 });
 
-PLASMIC.registerFunction( base64ToBlob, {
-  name : "base64ToBlob",
+PLASMIC.registerFunction( createBufferFile, {
+  name : "createBufferFile",
   params : [
     {
       name        : "base64",
