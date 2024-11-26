@@ -1,7 +1,5 @@
 import React from "react";
-import registerComponent, {
-    CodeComponentMeta,
-} from "@plasmicapp/host/registerComponent";
+import registerComponent from "@plasmicapp/host/registerComponent";
 import { DatePicker as AntdDatePicker } from "antd";
 
 import dayjs from "dayjs";

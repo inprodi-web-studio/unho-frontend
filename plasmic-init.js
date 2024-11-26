@@ -21,6 +21,7 @@ import validateEmail from "./helpers/vaidateEmail";
 import validatePhone from "./helpers/validatePhone";
 import createDayJsObject from "./helpers/createDayJsObject";
 import createFileBlob from "./helpers/createFileBlob";
+import { registerCustomUpload } from "./components/CustomUpload";
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
@@ -38,6 +39,7 @@ registerCalendar( PLASMIC );
 registerAssignationCalendar(PLASMIC);
 registerLimitedDatePicker( PLASMIC );
 registerPartnerOrder( PLASMIC );
+registerCustomUpload( PLASMIC );
 
 PLASMIC.registerFunction( getConstants, {
   name : "getConstants",

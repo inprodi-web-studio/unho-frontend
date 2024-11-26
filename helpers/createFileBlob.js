@@ -1,5 +1,3 @@
-import { Readable } from "node:stream";
-
 const createFileBlob = (base64, contentType = '', sliceSize = 512) => {
   const byteCharacters = atob(base64);
   const byteArrays = [];
