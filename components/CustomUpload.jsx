@@ -4,7 +4,12 @@ import registerComponent from "@plasmicapp/host/registerComponent";
 import { Upload } from 'antd';
 const { Dragger } = Upload;
 
-export const CustomUpload = forwardRef(({ value = [], onChange }, ref) => {
+export const CustomUpload = forwardRef(({
+    value = [],
+    label,
+    onChange,
+    multiple,
+}, ref) => {
     const [files, setFiles] = useState(value);
 
     useImperativeHandle(ref, () => ({
@@ -13,7 +18,7 @@ export const CustomUpload = forwardRef(({ value = [], onChange }, ref) => {
 
     return (
         <Dragger
-            multiple
+            multiple={multiple}
             fileList={files}
             listType="picture"
             onChange={(info) => {
@@ -21,7 +26,7 @@ export const CustomUpload = forwardRef(({ value = [], onChange }, ref) => {
                 onChange && onChange();
             }}
         >
-            <p>Subir Archivos</p>
+            <p>{ label }</p>
         </Dragger>
     );
 });
@@ -34,6 +39,14 @@ export const customUploadMeta = {
     props: {
         value: {
             type: "array",
+        },
+        label : {
+            type : "string",
+            defaultValue : "Subir Archivos",
+        },
+        multiple : {
+            type : "boolean",
+            defaultValue : true,
         },
         onChange : {
             type : "eventHandler",
