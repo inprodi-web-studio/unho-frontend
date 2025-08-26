@@ -13,6 +13,8 @@ export const Calendar = ({ events, onEventClick, showProperties }) => {
 
     if (status === "CONFIRMED") {
       return ["event-status-confirmed"];
+    } else if (status ==="CANCELED") {
+      return ["event-status-cancelled"];
     } else if (isForRent) {
       return ["event-status-for-rent"];
     } else if (status) {
@@ -21,8 +23,6 @@ export const Calendar = ({ events, onEventClick, showProperties }) => {
 
     return ["event-status-default"];
   };
-
-  console.log(status);
 
   return (
     <div className="calendar-container" style={{ height: "100%" }}>
