@@ -72,7 +72,7 @@ export const AssignationCalendar = forwardRef(({ events, minDate, maxDate, onEve
               <span style={{
                 fontSize: type === "multiMonthYear" ? "10px" : "12px",
                 fontWeight: "500",
-                color: isPast ? "#bfbfbf" : "white",
+                color: "white",
               }}>
                 {name} {fatherSurname} {motherSurname}
               </span>

@@ -3,16 +3,19 @@ import { toast } from "sonner";
 export const showNotification = (message, config) => {
     switch (config?.type) {
         case "success":
-            return toast.success(message);
+            return toast.success(message, { id : config.id });
 
         case "info":
-            return toast.info(message);
+            return toast.info(message, { id : config.id });
 
         case "warning":
-            return toast.warning(message);
+            return toast.warning(message, { id : config.id });
 
         case "error":
-            return toast.error(message);
+            return toast.error(message, { id : config.id });
+        
+        case "loading":
+            return toast.loading(message, { id : config.id });
 
         case "action":
             return toast(message, {
